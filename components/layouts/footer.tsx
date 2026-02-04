@@ -6,17 +6,17 @@ import { motion } from "motion/react";
 
 export function Footer() {
   const quickLinks = [
-    { label: "About Us", href: "#about" },
-    { label: "Courses", href: "#courses" },
-    { label: "Tutors", href: "#tutors" },
-    { label: "Contact", href: "#contact" },
+    { label: "About Us", href: "/about" },
+    { label: "Courses", href: "/programs" },
+    { label: "Tutors", href: "/about" },
+    { label: "Contact", href: "/contact" },
   ];
 
   const courses = [
-    { label: "Noorani Qaida", href: "#" },
-    { label: "Quran Memorization", href: "#" },
-    { label: "Tajweed", href: "#" },
-    { label: "Islamic Studies", href: "#" },
+    { label: "Noorani Qaida", href: "/programs" },
+    { label: "Quran Memorization", href: "/programs" },
+    { label: "Tajweed", href: "/programs" },
+    { label: "Islamic Studies", href: "/programs" },
   ];
 
   const socialLinks = [
