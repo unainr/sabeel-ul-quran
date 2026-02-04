@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,
@@ -13,6 +14,8 @@ import {
 } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "motion/react";
+import { ArrowRight, MessageCircle } from "lucide-react";
+import { WHATSAPP_NUMBER } from "@/lib/utils/whatsapp";
 
 const sliderData = [
   {
@@ -53,101 +56,135 @@ export function HeroSection() {
     });
   }, [api]);
 
+  const handleJoinClick = () => {
+    const message = "Hi! I'm interested in joining Sabeel Ul Quran. Please provide me with more information.";
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank");
+  };
+
   return (
-    <section className="relative w-full h-[600px] md:h-[700px] overflow-hidden bg-black">
+    <section className="relative w-full h-[600px] md:h-[700px] overflow-hidden bg-black group">
       <Carousel
         setApi={setApi}
         className="w-full h-full"
         plugins={[
           Autoplay({
-            delay: 5000,
+            delay: 6000,
+            stopOnInteraction: false,
           }),
         ]}
+        opts={{
+          loop: true,
+        }}
       >
         <CarouselContent>
-          {sliderData.map((slide) => (
+          {sliderData.map((slide, index) => (
             <CarouselItem key={slide.id} className="relative w-full h-[600px] md:h-[800px]">
               <div className="relative w-full h-full">
                 <Image
                   src={slide.image}
                   alt={slide.title}
                   fill
-                  priority={slide.id === 1}
-                  className="object-cover opacity-60"
+                  priority={index === 0}
+                  className="object-cover opacity-70 animate-ken-burns"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-10">
+                {/* Advanced Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/30" />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/50" />
+                
+                {/* Content Container */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-10 max-w-5xl mx-auto">
                   <AnimatePresence mode="wait">
-                    <motion.div
-                      key={`slide-${slide.id}`}
-                      initial={{ opacity: 0, y: 30 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -30 }}
-                      transition={{ duration: 0.8 }}
-                      className="space-y-6"
-                    >
-                      <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className="text-gold-400 font-serif text-lg md:text-2xl tracking-widest uppercase"
-                      >
-                        {slide.subtitle}
-                      </motion.h2>
-                      <motion.h1
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
-                        className="text-4xl md:text-7xl font-bold text-white tracking-tight font-serif drop-shadow-lg"
-                      >
-                        {slide.title}
-                      </motion.h1>
-                      
+                    {current === index + 1 && (
                       <motion.div
-                        initial={{ opacity: 0, y: 20 }}
+                        key={`slide-${slide.id}`}
+                        initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.6 }}
-                        className="flex gap-4 justify-center"
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="space-y-8"
                       >
-                        <Button 
-                          size="lg" 
-                          className="bg-gold-500 hover:bg-gold-600 text-black border-none font-semibold px-8 py-6 text-lg rounded-sm hover:scale-105 transition-transform"
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.8, delay: 0.2 }}
+                          className="inline-block"
                         >
-                          Join Now
-                        </Button>
-                        <Button 
-                          size="lg" 
-                          variant="outline"
-                          className="border-gold-500 text-gold-400 hover:bg-gold-500/10 hover:text-gold-300 px-8 py-6 text-lg rounded-sm hover:scale-105 transition-transform"
+                          <span className="px-4 py-1.5 rounded-full border border-gold-500/30 bg-gold-950/30 backdrop-blur-sm text-gold-400 font-serif text-sm md:text-base tracking-widest uppercase mb-4 shadow-[0_0_15px_rgba(234,179,8,0.2)]">
+                            {slide.subtitle}
+                          </span>
+                        </motion.div>
+
+                        <motion.h1
+                          initial={{ opacity: 0, scale: 0.95 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ duration: 0.8, delay: 0.3 }}
+                          className="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight font-serif drop-shadow-2xl leading-tight"
                         >
-                          Contact Us
-                        </Button>
+                          {slide.title}
+                        </motion.h1>
+                        
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.8, delay: 0.5 }}
+                          className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4"
+                        >
+                          <Button 
+                            size="lg" 
+                            onClick={handleJoinClick}
+                            className="bg-gold-500 hover:bg-gold-400 text-black border-none font-bold px-8 py-7 text-lg rounded-sm hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(234,179,8,0.3)] hover:shadow-[0_0_30px_rgba(234,179,8,0.5)] min-w-[200px] group/btn"
+                          >
+                            <MessageCircle className="w-5 h-5 mr-2 group-hover/btn:rotate-12 transition-transform" />
+                            Join Now
+                          </Button>
+                          
+                          <Link href="/contact" passHref>
+                            <Button 
+                              size="lg" 
+                              variant="outline"
+                              className="border-gold-500 text-gold-400 hover:bg-gold-500 hover:text-black px-8 py-7 text-lg rounded-sm hover:scale-105 transition-all duration-300 backdrop-blur-sm bg-black/20 min-w-[200px] group/btn"
+                            >
+                              Contact Us
+                              <ArrowRight className="w-5 h-5 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                            </Button>
+                          </Link>
+                        </motion.div>
                       </motion.div>
-                    </motion.div>
+                    )}
                   </AnimatePresence>
                 </div>
               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+        
+        {/* Navigation Dots */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-3 z-20">
           {Array.from({ length: count }).map((_, index) => (
             <button
               key={index}
-              className={`h-2 transition-all duration-300 rounded-full ${
-                index + 1 === current ? "w-8 bg-gold-500" : "w-2 bg-white/50 hover:bg-white"
+              className={`h-1.5 transition-all duration-500 rounded-full ${
+                index + 1 === current 
+                  ? "w-12 bg-gold-500 shadow-[0_0_10px_rgba(234,179,8,0.5)]" 
+                  : "w-3 bg-white/40 hover:bg-white/80"
               }`}
               onClick={() => api?.scrollTo(index)}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
         </div>
-        <div className="hidden md:block">
-            <CarouselPrevious className="left-8 border-gold-500/50 text-gold-400 hover:bg-gold-950/50 hover:text-white" />
-            <CarouselNext className="right-8 border-gold-500/50 text-gold-400 hover:bg-gold-950/50 hover:text-white" />
+
+        {/* Navigation Arrows */}
+        <div className="hidden md:block opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <CarouselPrevious className="left-8 border-gold-500/30 bg-black/20 text-gold-400 hover:bg-gold-500 hover:text-black hover:border-gold-500 h-12 w-12" />
+            <CarouselNext className="right-8 border-gold-500/30 bg-black/20 text-gold-400 hover:bg-gold-500 hover:text-black hover:border-gold-500 h-12 w-12" />
         </div>
       </Carousel>
+      
+      {/* Decorative Bottom Fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent z-10" />
     </section>
   );
 }

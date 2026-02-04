@@ -117,14 +117,14 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3 text-white/60">
                 <Phone className="h-5 w-5 text-gold-400 shrink-0" />
-                <a href="tel:+1234567890" className="hover:text-gold-400 transition-colors">
-                  +123 456 7890
+                <a href="tel:+923710087431" className="hover:text-gold-400 transition-colors">
+                  +92 3710087431
                 </a>
               </li>
               <li className="flex items-center gap-3 text-white/60">
                 <Mail className="h-5 w-5 text-gold-400 shrink-0" />
-                <a href="mailto:info@sabeelulquran.com" className="hover:text-gold-400 transition-colors">
-                  info@sabeelulquran.com
+                <a href="mailto:sabeelulquranonline@gmail.com" className="hover:text-gold-400 transition-colors">
+                  sabeelulquranonline@gmail.com
                 </a>
               </li>
             </ul>
