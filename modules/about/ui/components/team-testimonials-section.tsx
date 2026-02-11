@@ -9,7 +9,7 @@ const team = [
     id: 1,
     name: "Sidra Siraj",
     role: "Islamic Scholar",
-    image: "/images/slider/slider_quran_study_1770137489630.png",
+    image: "/images/q7.jpg",
     description: "Bachelors in english literature & 12 years experience in teaching quran and other subjects.",
   },
   {
@@ -81,7 +81,7 @@ export function TeamTestimonialsSection() {
         </motion.div>
 
         {/* Team Grid */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-20">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {team.map((member, index) => (
             <motion.div
               key={member.id}

@@ -40,8 +40,7 @@ export function DonationSection() {
           >
             <div className="text-[#d4a853] font-serif text-3xl mb-4">الله</div>
             <h2 className="text-5xl md:text-6xl font-bold mb-12 font-serif uppercase leading-tight">
-              SUPPORT US,<br />
-              WE NEED YOUR HELP.
+              FEEL FREE TO <br /> JOIN
             </h2>
           </motion.div>
 
@@ -85,7 +84,7 @@ export function DonationSection() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-white/70 italic text-lg leading-relaxed max-w-2xl"
           >
-            May Allah bless you! Thank you. Those who (in charity) spend of their goods by night and by day, in secret and in public, have their reward with their Lord.
+            May Allah bless you.
           </motion.blockquote>
 
 

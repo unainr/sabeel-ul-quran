@@ -61,10 +61,10 @@ export function ProgramCard({
         </div> */}
 
         {/* Price */}
-        <div className="absolute bottom-4 left-4">
+        {/* <div className="absolute bottom-4 left-4">
           <div className="text-gold-400 text-sm font-semibold mb-1">Starting from</div>
           <div className="text-3xl font-bold text-white">{price}</div>
-        </div>
+        </div> */}
       </div>
 
       {/* Content */}
