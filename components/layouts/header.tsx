@@ -28,7 +28,7 @@ export default function MainHeader() {
         { href: "/", label: "Home" },
         { href: "/about", label: "About" },
         { href: "/events", label: "Events" },
-        { href: "/programs", label: "Programs" },
+        { href: "/programs", label: "Courses" },
         { href: "/contact", label: "Contact" },
     ];
 

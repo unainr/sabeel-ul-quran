@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { motion } from "motion/react";
+import Link from "next/link";
 
 export function PrayerTimesSection() {
   const prayers = [
@@ -96,8 +97,8 @@ export function PrayerTimesSection() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl md:text-5xl font-bold text-[#2d1f0f] mb-8 font-serif leading-tight uppercase"
             >
-              WELCOME TO THE<br />
-              ISLAMIC CENTER
+              WELCOME TO<br />
+              SABEEL UL QURAN
             </motion.h2>
 
             <motion.div
@@ -108,10 +109,10 @@ export function PrayerTimesSection() {
               className="space-y-5 text-[#6b5d4f] text-base leading-relaxed"
             >
               <p>
-                The Shaha is not just a mosque for prayers rather it is a community center for all.
+                Sabeel Ul Quran is not just an online academy, it is a comprehensive platform dedicated to Quranic education and Islamic learning for all.
               </p>
               <p>
-                The Center is committed to preserving an Islamic identity, building and supporting a viable Muslim community, promoting a comprehensive Islamic way of life based on the Holy Quran and the Sunnah of Prophet Muhammad.
+                We are committed to providing high-quality Quranic education through professional tutors, preserving Islamic identity, and promoting a comprehensive Islamic way of life based on the Holy Quran and the Sunnah of Prophet Muhammad (PBUH).
               </p>
             </motion.div>
 
@@ -121,9 +122,11 @@ export function PrayerTimesSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <Button className="mt-10 bg-teal-600 hover:bg-teal-700 text-white font-semibold px-8 py-6 text-base rounded-md shadow-md hover:scale-105 transition-transform">
+              <Link href="/about">
+              <Button className="mt-10 bg-[#d4a853] hover:bg-[#c89a3f] text-white font-semibold px-8 py-6 text-base rounded-md shadow-md hover:scale-105 transition-transform">
                 Read More
               </Button>
+              </Link>
             </motion.div>
           </div>
         </div>

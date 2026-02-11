@@ -17,7 +17,7 @@ function EventsView() {
         height="md"
       />
       <EventsCalendarSection />
-      <EventsGridSection />
+      {/* <EventsGridSection /> */}
       <EventsFeaturesSection />
       <Footer />
     </div>

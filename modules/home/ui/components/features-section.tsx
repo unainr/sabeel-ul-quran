@@ -3,38 +3,39 @@
 import { Button } from "@/components/ui/button";
 import { BookOpen, User, Video, Calendar, ShieldCheck, HeartHandshake } from "lucide-react";
 import { motion } from "motion/react";
+import Link from "next/link";
 
 export function FeaturesSection() {
     const courses = [
         {
             icon: BookOpen,
-            title: "Noorani Qaida",
-            description: "The fundamental step for beginners to learn Quranic alphabets and pronunciation.",
-        },
-        {
-            icon: HeartHandshake,
-            title: "Quran Memorization",
-            description: "Complete or partial Hifz program with simplified techniques for easy retention.",
+            title: "Qaida with tajweed",
+            description: "Learn the foundational Noorani Qaida with proper Tajweed rules for accurate pronunciation.",
         },
         {
             icon: Video,
-            title: "Tajweed & Recitation",
-            description: "Master the art of Quranic recitation with proper Tajweed rules and phonetics.",
+            title: "Quran with tajweed",
+            description: "Master Quranic recitation with precise Tajweed application and beautiful articulation.",
+        },
+        {
+            icon: HeartHandshake,
+            title: "Quran with translation",
+            description: "Understand the divine message through Quranic recitation combined with comprehensive translation.",
         },
         {
             icon: ShieldCheck,
-            title: "Islamic Studies",
-            description: "Comprehensive courses on Fiqh, Seerah, and Hadith for a holistic education.",
+            title: "Fiqh",
+            description: "Study Islamic jurisprudence and rulings to practice your faith with knowledge and confidence.",
         },
         {
             icon: User,
-            title: "Female Tutors",
-            description: "Dedicated qualified female tutors available for sisters and daughters.",
+            title: "Surf",
+            description: "Learn Arabic grammar and morphology to deepen your understanding of the Quran's linguistic beauty.",
         },
         {
             icon: Calendar,
-            title: "Flexible Scheduling",
-            description: "Classes 24/7. Choose the time that works best for you and your family.",
+            title: "Namaz and duas",
+            description: "Perfect your daily prayers and learn essential supplications for spiritual connection.",
         },
     ];
 
@@ -80,23 +81,23 @@ export function FeaturesSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="group relative bg-background p-8 rounded-xl shadow-sm border border-border/50 hover:border-gold-500/50 hover:shadow-xl transition-all duration-300"
+                    className="group relative bg-background p-8 pb-10 rounded-xl shadow-sm border border-border/50 hover:border-gold-500/50 hover:shadow-xl transition-all duration-300 flex flex-col"
                 >
                     <div className="absolute top-0 right-0 w-24 h-24 bg-gold-500/5 rounded-bl-[100px] transition-all group-hover:bg-gold-500/10" />
                     
-                    <div className="relative z-10">
+                    <div className="relative z-10 flex flex-col flex-1">
                         <div className="w-14 h-14 bg-gold-100 dark:bg-gold-900/20 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gold-500 group-hover:text-white transition-colors duration-300">
                              <course.icon className="h-7 w-7 text-gold-600 dark:text-gold-400 group-hover:text-white transition-colors" />
                         </div>
                         
                         <h3 className="text-xl font-bold mb-3 font-serif group-hover:text-gold-600 transition-colors">{course.title}</h3>
-                        <p className="text-muted-foreground leading-relaxed mb-6">
+                        <p className="text-muted-foreground leading-relaxed mb-6 flex-1">
                             {course.description}
                         </p>
                         
-                        <a href="#" className="inline-flex items-center text-sm font-semibold text-gold-500 hover:text-gold-600 uppercase tracking-wider">
+                        <Link href="/programs" className="inline-flex items-center text-sm font-semibold text-gold-500 hover:text-gold-600 uppercase tracking-wider mt-auto">
                             Enroll Now <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
-                        </a>
+                        </Link>
                     </div>
                 </motion.div>
             ))}
@@ -109,9 +110,11 @@ export function FeaturesSection() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-16 text-center"
         >
-             <Button className="bg-black text-white hover:bg-gold-950 border border-gold-500/30 px-8 py-6 text-lg rounded-sm hover:scale-105 transition-transform">
-                View All Courses
-             </Button>
+             <Link href="/programs">
+                <Button className="bg-black text-white hover:bg-gold-950 border border-gold-500/30 px-8 py-6 text-lg rounded-sm hover:scale-105 transition-transform">
+                   View All Courses
+                </Button>
+             </Link>
         </motion.div>
       </div>
     </section>

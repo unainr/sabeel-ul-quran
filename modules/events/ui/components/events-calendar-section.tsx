@@ -6,35 +6,35 @@ import { Calendar as CalendarIcon, Clock, MapPin } from "lucide-react";
 const upcomingEvents = [
   {
     id: 1,
-    date: "Feb 15",
-    day: "Friday",
-    time: "7:00 PM",
-    title: "Tafseer of Surah Al-Baqarah",
+    date: "15 Shaban",
+    day: "Islamic",
+    time: "After Maghrib",
+    title: "Shab-e-Baraat",
     location: "Main Hall",
   },
   {
     id: 2,
-    date: "Feb 20",
-    day: "Wednesday",
-    time: "2:00 PM",
-    title: "Tajweed Mastery Workshop",
-    location: "Learning Center",
+    date: "27 Rajab",
+    day: "Islamic",
+    time: "After Maghrib",
+    title: "Shab-e-Miraj",
+    location: "Main Hall",
   },
   {
     id: 3,
-    date: "Feb 25",
-    day: "Monday",
-    time: "6:30 PM",
-    title: "Community Iftar Gathering",
+    date: "10 Muharram",
+    day: "Islamic",
+    time: "6:00 PM",
+    title: "Waqaya Qarbala",
     location: "Community Center",
   },
   {
     id: 4,
-    date: "Feb 28",
-    day: "Thursday",
-    time: "10:00 AM",
-    title: "Charity Drive for Orphans",
-    location: "Multiple Locations",
+    date: "12 Rabi-ul-Awwal",
+    day: "Islamic",
+    time: "7:00 PM",
+    title: "Rabi-ul-awal",
+    location: "Main Hall",
   },
 ];
 
@@ -68,43 +68,25 @@ export function EventsCalendarSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="relative flex gap-6 md:gap-8 mb-8 group"
+              className="relative mb-6 group"
             >
-              {/* Date Badge */}
-              <div className="flex-shrink-0 w-24 md:w-32">
-                <div className="bg-card border-2 border-gold-500/30 rounded-lg p-4 text-center group-hover:border-gold-500 group-hover:shadow-lg group-hover:shadow-gold-500/20 transition-all duration-300">
-                  <div className="text-gold-500 text-sm font-semibold uppercase mb-1">
-                    {event.day}
-                  </div>
-                  <div className="text-2xl md:text-3xl font-bold text-foreground">
-                    {event.date.split(" ")[0]}
-                  </div>
-                  <div className="text-xs text-muted-foreground uppercase">
-                    {event.date.split(" ")[1]}
-                  </div>
-                </div>
-              </div>
-
-              {/* Event Details */}
-              <div className="flex-1 bg-card border border-border rounded-lg p-6 group-hover:border-gold-500/50 group-hover:shadow-xl group-hover:shadow-gold-500/10 transition-all duration-300">
-                <h3 className="text-xl md:text-2xl font-bold text-foreground font-serif mb-3 group-hover:text-gold-500 transition-colors">
-                  {event.title}
-                </h3>
-                <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
-                  <div className="flex items-center gap-2">
-                    <Clock className="w-4 h-4 text-gold-500" />
-                    <span>{event.time}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-gold-500" />
-                    <span>{event.location}</span>
+              {/* Event Card */}
+              <div className="bg-gradient-to-br from-card to-card/50 border-2 border-gold-500/30 rounded-xl p-8 md:p-10 group-hover:border-gold-500 group-hover:shadow-2xl group-hover:shadow-gold-500/20 transition-all duration-300 hover:scale-[1.02]">
+                <div className="flex items-center justify-between flex-wrap gap-4">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gold-500 font-serif group-hover:text-gold-400 transition-colors">
+                    {event.title}
+                  </h3>
+                  <div className="text-lg md:text-xl font-semibold text-muted-foreground">
+                    {event.date}
                   </div>
                 </div>
               </div>
 
               {/* Connector Line */}
               {index < upcomingEvents.length - 1 && (
-                <div className="absolute left-12 md:left-16 top-24 w-0.5 h-8 bg-gradient-to-b from-gold-500/50 to-transparent" />
+                <div className="flex justify-center my-4">
+                  <div className="w-0.5 h-6 bg-gradient-to-b from-gold-500/50 to-transparent" />
+                </div>
               )}
             </motion.div>
           ))}

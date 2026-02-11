@@ -7,10 +7,10 @@ function ProgramsView() {
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       <PageBanner
-        title="Our Programs"
+        title="Courses"
         breadcrumbs={[
           { label: "Home", href: "/" },
-          { label: "Programs" },
+          { label: "Courses" },
         ]}
         backgroundImage="/images/slider/slider_quran_study_1770137489630.png"
         height="md"

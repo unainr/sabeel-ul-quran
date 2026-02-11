@@ -120,7 +120,7 @@ export function HeroSection() {
                           initial={{ opacity: 0, scale: 0.95 }}
                           animate={{ opacity: 1, scale: 1 }}
                           transition={{ duration: 0.8, delay: 0.3 }}
-                          className="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight font-serif drop-shadow-2xl leading-tight"
+                          className="text-4xl md:text-6xl lg:text-6xl font-bold text-white tracking-tight font-serif drop-shadow-2xl leading-tight"
                         >
                           {slide.title}
                         </motion.h1>

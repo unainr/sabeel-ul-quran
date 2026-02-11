@@ -1,7 +1,9 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { BookOpen, Heart, Users, HandHeart } from "lucide-react";
 import { motion } from "motion/react";
+import Link from "next/link";
 
 export function PhilosophySection() {
   const philosophies = [
@@ -92,9 +94,11 @@ export function PhilosophySection() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mt-16 text-center"
         >
-          <button className="bg-gold-500 hover:bg-gold-600 text-black font-semibold px-10 py-4 text-base rounded-sm uppercase tracking-wide hover:scale-105 transition-transform shadow-lg">
+          <Link href={'/about'}>
+          <Button size={'lg'} className="bg-gold-500 hover:bg-gold-600 text-black font-semibold px-10 p-6 text-base rounded-sm uppercase tracking-wide hover:scale-105 transition-transform shadow-lg">
             Learn More
-          </button>
+          </Button>
+          </Link>
         </motion.div>
       </div>
     </section>

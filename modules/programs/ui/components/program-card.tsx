@@ -56,9 +56,9 @@ export function ProgramCard({
         </div>
 
         {/* Level Badge */}
-        <div className="absolute top-4 right-4 bg-black/80 backdrop-blur-sm text-white px-4 py-1 rounded-full text-sm border border-gold-500/30">
+        {/* <div className="absolute top-4 right-4 bg-black/80 backdrop-blur-sm text-white px-4 py-1 rounded-full text-sm border border-gold-500/30">
           {level}
-        </div>
+        </div> */}
 
         {/* Price */}
         <div className="absolute bottom-4 left-4">

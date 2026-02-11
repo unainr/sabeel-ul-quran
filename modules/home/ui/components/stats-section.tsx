@@ -24,7 +24,7 @@ export function StatsSection() {
     {
       id: 3,
       icon: BookOpen,
-      value: 20,
+      value: 10,
       suffix: "+",
       label: "Courses Available",
     },

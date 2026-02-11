@@ -105,7 +105,7 @@ export function ContactInfoSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center"
         >
-          <h3 className="text-2xl font-bold text-foreground font-serif mb-6">
+          {/* <h3 className="text-2xl font-bold text-foreground font-serif mb-6">
             Connect With Us
           </h3>
           <div className="flex justify-center gap-4">
@@ -121,7 +121,7 @@ export function ContactInfoSection() {
                 <social.icon className="w-6 h-6" />
               </a>
             ))}
-          </div>
+          </div> */}
         </motion.div>
       </div>
     </section>

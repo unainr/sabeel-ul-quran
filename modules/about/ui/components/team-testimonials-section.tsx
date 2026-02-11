@@ -7,24 +7,31 @@ import { Users, Award, Heart, Star } from "lucide-react";
 const team = [
   {
     id: 1,
-    name: "Sheikh Ahmed Al-Mansoor",
-    role: "Chief Islamic Scholar",
+    name: "Sidra Siraj",
+    role: "Islamic Scholar",
     image: "/images/slider/slider_quran_study_1770137489630.png",
-    description: "25+ years of Quranic teaching experience",
+    description: "Bachelors in english literature & 12 years experience in teaching quran and other subjects.",
   },
   {
     id: 2,
-    name: "Dr. Fatima Hassan",
-    role: "Director of Education",
+    name: "Hafiza Dua",
+    role: "Qualified Hafiza",
     image: "/images/slider/slider_mosque_interior_1770137472856.png",
-    description: "PhD in Islamic Studies from Al-Azhar",
+    description: "5+ Years teaching experience in Hifz ul Quran",
   },
   {
     id: 3,
-    name: "Ustadh Ibrahim Khan",
-    role: "Head of Tajweed Department",
+    name: "Afia Batool",
+    role: "Islamic Scholar",
     image: "/images/slider/slider_islamic_pattern_1770137503986.png",
-    description: "Expert in Quranic recitation and Tajweed",
+    description: "Bachelors in islamic studies",
+  },
+  {
+    id: 4,
+    name: "Ustaad Usmaan",
+    role: "Counselor of sabeel-ul-quran",
+    image: "/images/slider/slider_quran_study_1770137489630.png",
+    description: "Counselor and Motivational Leader of sabeel-ul-quran.",
   },
 ];
 
@@ -65,7 +72,7 @@ export function TeamTestimonialsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-bold text-foreground font-serif mb-4">
-            Meet Our Scholars
+            Meet Our Scholars & Tutors
           </h2>
           <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto">
             Learn from experienced Islamic scholars dedicated to your spiritual growth

@@ -7,9 +7,9 @@ import { useRef, useEffect, useState } from "react";
 
 export function DonationSection() {
   const goals = [
-    { label: "Mosque", percent: 40 },
-    { label: "Expenses", percent: 68 },
-    { label: "Feed Hungry", percent: 75 },
+    { label: "No Age Limit", percent: 100 },
+    { label: "No gender Issue", percent: 100 },
+    { label: "Trial Classes", percent: 100 },
   ];
 
   const ref = useRef(null);
@@ -30,7 +30,7 @@ export function DonationSection() {
       </div>
 
       <div className="container relative z-10 mx-auto px-4 md:px-8">
-        <div className="max-w-2xl">
+        <div className="max-w-3xl">
           
           {/* Content */}
           <motion.div
@@ -39,14 +39,14 @@ export function DonationSection() {
             transition={{ duration: 0.6 }}
           >
             <div className="text-[#d4a853] font-serif text-3xl mb-4">الله</div>
-            <h2 className="text-5xl md:text-6xl font-bold mb-16 font-serif uppercase leading-tight">
+            <h2 className="text-5xl md:text-6xl font-bold mb-12 font-serif uppercase leading-tight">
               SUPPORT US,<br />
               WE NEED YOUR HELP.
             </h2>
           </motion.div>
 
           {/* Circular Progress Bars with Animated Percentages */}
-          <div className="flex gap-12 mb-16 justify-start">
+          <div className="flex flex-wrap gap-8 md:gap-12 mb-12 justify-start">
             {goals.map((goal, index) => (
               <motion.div
                 key={goal.label}
@@ -55,7 +55,7 @@ export function DonationSection() {
                 transition={{ duration: 0.5, delay: index * 0.15 }}
                 className="flex flex-col items-center"
               >
-                <div className="relative w-28 h-28 mb-5">
+                <div className="relative w-32 h-32 mb-5">
                   <svg className="w-full h-full -rotate-90" viewBox="0 0 100 100">
                     <circle cx="50" cy="50" r="45" fill="transparent" stroke="#333" strokeWidth="3" />
                     <motion.circle 
@@ -74,7 +74,7 @@ export function DonationSection() {
                   </svg>
                   <AnimatedCounter target={goal.percent} isInView={isInView} delay={index * 0.15} />
                 </div>
-                <span className="font-semibold text-sm uppercase tracking-wider text-white/90">{goal.label}</span>
+                <span className="font-semibold text-base uppercase tracking-wider text-white/90 text-center">{goal.label}</span>
               </motion.div>
             ))}
           </div>
@@ -83,20 +83,12 @@ export function DonationSection() {
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-white/60 italic text-base leading-relaxed mb-10 max-w-lg"
+            className="text-white/70 italic text-lg leading-relaxed max-w-2xl"
           >
             May Allah bless you! Thank you. Those who (in charity) spend of their goods by night and by day, in secret and in public, have their reward with their Lord.
           </motion.blockquote>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.6 }}
-          >
-            <Button className="bg-teal-600 hover:bg-teal-700 text-white font-semibold px-10 py-6 text-base rounded-md shadow-lg hover:scale-105 transition-transform">
-              Donate Now
-            </Button>
-          </motion.div>
+
         </div>
       </div>
     </section>
