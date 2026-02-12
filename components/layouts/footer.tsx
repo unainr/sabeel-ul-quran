@@ -116,7 +116,7 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-white/60">
                 <MapPin className="h-5 w-5 text-gold-400 shrink-0 mt-1" />
-                <span>123 Islamic Center, Education City, Country</span>
+                <span>Plot 58 F,Block 2,Ground Floor,PECHS,Karachi</span>
               </li>
               <li className="flex items-center gap-3 text-white/60">
                 <Phone className="h-5 w-5 text-gold-400 shrink-0" />

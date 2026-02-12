@@ -23,7 +23,7 @@ const contactInfo = [
     id: 3,
     icon: MapPin,
     title: "Address",
-    details: ["123 Islamic Center Drive", "City, State 12345, USA"],
+    details: ["Plot 58 F,Block 2,Ground Floor,PECHS,Karachi"],
     link: "#",
   },
   {
@@ -60,7 +60,7 @@ export function ContactInfoSection() {
           <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto">
             Multiple ways to reach us - choose what works best for you
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent mx-auto mt-6" />
+          <div className="w-24 h-1 bg-linear-to-r from-transparent via-gold-500 to-transparent mx-auto mt-6" />
         </motion.div>
 
         {/* Contact Cards */}
