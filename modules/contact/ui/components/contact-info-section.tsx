@@ -9,8 +9,8 @@ const contactInfo = [
     id: 1,
     icon: Phone,
     title: "Phone",
-    details: ["+92 3710087431"],
-    link: "tel:+923710087431",
+    details: ["+44 7853 148468"],
+    link: "tel:+447853148468",
   },
   {
     id: 2,
