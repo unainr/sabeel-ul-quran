@@ -1,6 +1,6 @@
 // WhatsApp Integration Utility
 // Replace this number with your actual WhatsApp business number
-export const WHATSAPP_NUMBER = "923710087431"; // Format: country code + number (no + or spaces)
+export const WHATSAPP_NUMBER = "447853148468"; // Format: country code + number (no + or spaces)
 
 export function sendToWhatsApp(message: string) {
   const encodedMessage = encodeURIComponent(message);
